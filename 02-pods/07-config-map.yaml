@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config-map
+  name: devops-config
 data:
   course: DevOps
   trainer: sivakumar
