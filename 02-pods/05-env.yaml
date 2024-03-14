@@ -8,8 +8,8 @@ spec:
   containers:
   - name: envar-demo-container
     image: nginx
-  env:
-  - name: DEMO_GREETING
-    value: "Hello from the environment"
-  - name: DEMO_FAREWELL
-    value: "such a sweet sorrow"
+    env:
+    - name: DEMO_GREETING
+      value: "Hello from the environment"
+    - name: DEMO_FAREWELL
+      value: "such a sweet sorrow"
