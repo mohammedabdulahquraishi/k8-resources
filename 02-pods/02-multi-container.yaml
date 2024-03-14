@@ -8,6 +8,6 @@ spec:
     image: nginx
     ports:
     - containerPort: 80
-  - name: alma
+  - name: almalinux
     image: almalinux:8
-    command: ["sleep", "30"]
+    command: ["sleep", "300"]
