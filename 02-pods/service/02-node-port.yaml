@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-node-port
+  labels:
+    app: nginx-node-port
+    demo: service
+spec:
+  # list of containers
+  containers:
+  - name: hello-pod
+    image: nginx
+    #here with this line port will not be opened, just for information
+    ports:
+    - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service
+spec:
+  type: Node-port
+  selector:
+    app: nginx-node-port
+    demo: service
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #container-port
