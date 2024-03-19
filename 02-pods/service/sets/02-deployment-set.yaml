@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+    demo: deployment
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector: # replica-set labels
+    matchLabels:
+      app: nginx
+      demo: deployment
+  template: # pod-definition
+    metadata:
+      labels:
+        app: nginx
+        demo: deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:mainline-alpine3.18-perl
