@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: loadbalancing
+  labels:
+    add: pat
+    sub: nut
+spec:
+  containers:
+  - name: loader
+    image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:loadbalaner
+spec:
+  type: LoadBalancer
+  selector:
+    add: pat
+    sub: nut
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 
+
