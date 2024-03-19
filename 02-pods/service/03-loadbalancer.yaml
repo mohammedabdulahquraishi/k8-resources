@@ -24,5 +24,9 @@ spec:
   selector:
     app: nginx-node-port
     demo: service
+  ports:
+  - protocol: TCP
+    port: 80 #service-port
+    targetPort: 80 #container-port 
   #container-port 
 
